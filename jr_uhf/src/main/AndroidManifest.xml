@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jr.uhf"
+    android:versionCode="2"
+    android:versionName="1.2" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="17" />
+    <uses-feature android:name="android.hardware.usb.accessory"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
+    <application
+        android:allowBackup="true"
+        android:name="com.jr.uhf.MyActivityManager" >
+        
+        <activity
+            android:name="com.jr.uhf.MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity android:name="com.jr.uhf.BluetoothActivity"></activity>
+        <activity android:name="com.jr.uhf.InventoryTagActivity"></activity>
+        <activity android:name="com.jr.uhf.ReadActivity"></activity>
+        <activity android:name="com.jr.uhf.WriteActivity"></activity>
+        <activity android:name="com.jr.uhf.SettingActivity"></activity>
+        <activity android:name="com.jr.uhf.SerialportUHFactivity"></activity>
+         <activity android:name="com.jr.uhf.SerialportUHFreadWriteActivity"></activity>
+        <activity android:name="com.jr.uhf.ParaSettingActivity"></activity>
+        <activity android:name="com.jr.uhf.LockActivity"></activity>
+        <activity android:name="com.jr.uhf.SerialportUHFsettingActivity"></activity>
+        <activity android:name="com.jr.uhf.SerialportSettingActivity"></activity>
+        <activity android:name="com.jr.uhf.KillActivity"></activity>
+        <activity android:name="com.jr.uhf.SerialportUHFlockKillActivity"></activity>
+        <activity android:name="com.jr.uhf.HelpAcivity"></activity>
+        <activity android:name="com.jr.uhf.UsbSettingActivity">
+            <!-- 
+                       <intent-filter>
+               <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"/>
+            </intent-filter>
+            -->
+            <meta-data 
+            	android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"
+            	android:resource="@xml/accessory_filter">
+            </meta-data>
+             
+        </activity>
+
+    </application>
+
+</manifest>
